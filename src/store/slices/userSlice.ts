@@ -1,12 +1,12 @@
-'use client';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+"use client";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: '',
+  name: "username",
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     setName: (state, action: PayloadAction<string>) => {
