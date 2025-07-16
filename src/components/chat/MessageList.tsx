@@ -135,7 +135,10 @@ export const MessageList: React.FC<MessageListProps> = ({
   }, [chatroomId]);
 
   return (
-    <div ref={containerRef} className="space-y-4 overflow-y-auto overflow-x-hidden h-full">
+    <div
+      ref={containerRef}
+      className="space-y-4 overflow-y-auto overflow-x-hidden h-full"
+    >
       {isLoadingMore && (
         <div className="flex justify-center py-4">
           <LoadingSkeleton />
