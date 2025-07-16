@@ -4,7 +4,6 @@ import { useAuth } from "../../hooks/useAuth";
 import { DashboardLayout } from "../../components/layout/DashboardLayout";
 import { Button } from "../../components/ui/button";
 import { MessageSquarePlus } from "lucide-react";
-import { useChatStore } from "../../store/chatStore";
 import { useRouter } from "next/navigation";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { CreateChatroom } from "@/components/dashboard/CreateChatroom";

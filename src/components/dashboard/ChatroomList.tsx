@@ -1,18 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { useChatStore } from "../../store/chatStore";
-import { CreateChatroom } from "./CreateChatroom";
 import { SearchBar } from "./SearchBar";
 import { Button } from "../ui/button";
 import { formatTimestamp } from "../../lib/utils";
-import { Trash2, MessageCircle, Plus } from "lucide-react";
+import { Trash2, MessageCircle } from "lucide-react";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
-import { Dialog, DialogTrigger } from "../ui/dialog";
 
 export const ChatroomList: React.FC = () => {
-  const [showCreateForm, setShowCreateForm] = useState(false);
   const { deleteChatroom, getFilteredChatrooms } = useChatStore();
 
   const filteredChatrooms = getFilteredChatrooms();

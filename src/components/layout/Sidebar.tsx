@@ -11,12 +11,8 @@ import {
   MoreHorizontal,
   Trash2,
   Edit2,
-  ChevronLeft,
-  ChevronRight,
-  Plus,
   Check,
   X,
-  Menu,
   SquarePen,
   Search,
   MenuIcon,
@@ -234,7 +230,7 @@ export function Sidebar({
         {/* Chat List - Only render when expanded */}
         {isExpanded && (
           <div className="flex-1 overflow-hidden">
-            <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500">
+            <div className="h-full px-2 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500">
               <div className="p-2 space-y-1">
                 <p className="text-sm text-slate-400">Recent</p>
                 <div className="max-h-[60vh] overflow-y-auto  overflow-x-hidden [&::-webkit-scrollbar]:hidden hover:[&::-webkit-scrollbar]:block [-ms-overflow-style:none] hover:[-ms-overflow-style:auto] [scrollbar-width:none] hover:[scrollbar-width:auto]">

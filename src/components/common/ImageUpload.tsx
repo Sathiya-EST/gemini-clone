@@ -2,8 +2,7 @@
 
 import { useState, useRef } from "react";
 import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
-import { Upload, X } from "lucide-react";
+import { Upload } from "lucide-react";
 import { toast } from "react-hot-toast";
 
 interface ImageUploadProps {

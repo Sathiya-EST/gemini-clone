@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import { Sidebar } from './Sidebar';
 import { useAuth } from '../../hooks/useAuth';
 
 interface DashboardLayoutProps {
@@ -10,7 +8,6 @@ interface DashboardLayoutProps {
 }
 
 export function DashboardLayout({ children, currentChatroomId }: DashboardLayoutProps) {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {

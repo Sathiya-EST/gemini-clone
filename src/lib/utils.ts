@@ -24,16 +24,6 @@ export const formatTimestamp = (date: string | Date): string => {
 
   return validDate.toLocaleDateString();
 };
-// export const formatTimestamp = (date: Date): string => {
-//   const now = new Date();
-//   const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
-
-//   if (diffInMinutes < 1) return 'Just now';
-//   if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
-//   if (diffInMinutes < 1440) return `${Math.floor(diffInMinutes / 60)}h ago`;
-
-//   return date.toLocaleDateString();
-// };
 
 export const generateId = (): string => {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
@@ -52,3 +42,13 @@ export const copyToClipboard = async (text: string): Promise<boolean> => {
     return false;
   }
 };
+export function throttle(func: (...args: unknown[]) => void, delay: number) {
+  let lastCall = 0;
+  return function (...args: unknown[]) {
+    const now = new Date().getTime();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      func(...args);
+    }
+  };
+}

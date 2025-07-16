@@ -34,6 +34,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onOTPSent }) => {
       onOTPSent();
     } catch (error:unknown) {
       toast.error("Failed to send OTP. Please try again.");
+      console.log(error);
+      
     }
   };
 

@@ -109,11 +109,10 @@ export const useChatStore = create<ChatStore>()(
             },
             isTyping: false,
           }));
-        }, 2000 + Math.random() * 1000); // Throttled response
+        }, 2000 + Math.random() * 1000);
       },
 
       loadMoreMessages: (chatroomId: string) => {
-        // Simulate loading older messages
         const dummyMessages: Message[] = Array.from({ length: 10 }, (_, i) => ({
           id: generateId(),
           content: `Older message ${i + 1}`,

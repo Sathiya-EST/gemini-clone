@@ -4,16 +4,13 @@ import { useParams } from "next/navigation";
 import { useAuth } from "../../../hooks/useAuth";
 import { ChatInterface } from "../../../components/chat/ChatInterface";
 import { useChatStore } from "../../../store/chatStore";
-import { Button } from "../../../components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 
 export default function ChatPage() {
   const { id } = useParams();
   const { isAuthenticated } = useAuth();
   const { chatrooms } = useChatStore();
 
-  const chatroom = chatrooms.find((room) => room.id === id);
+  // const chatroom = chatrooms.find((room) => room.id === id);
 
   if (!isAuthenticated) {
     return null;

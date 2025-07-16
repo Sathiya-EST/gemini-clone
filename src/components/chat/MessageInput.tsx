@@ -147,7 +147,7 @@ import { messageSchema } from "../../lib/validations";
 import { Button } from "../ui/button";
 import { ImageUpload } from "../common/ImageUpload";
 import { useChatStore } from "../../store/chatStore";
-import { Send, X, Plus, Paperclip } from "lucide-react";
+import { Send, X, Plus } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
 

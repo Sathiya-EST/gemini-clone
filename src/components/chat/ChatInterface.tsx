@@ -42,7 +42,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ chatroomId }) => {
           overflowAnchor: "none",
         }}
       >
-        <div className="max-w-4xl min-h-[20vh] max-h-[40vh] mx-auto px-4 py-6">
+        <div className="max-w-4xl min-h-[20vh] max-h-[40vh] overflow-x-hidden mx-auto px-4 py-6">
           <MessageList messages={chatMessages} chatroomId={chatroomId} />
           {isTyping && <TypingIndicator />}
           <div ref={messagesEndRef} />

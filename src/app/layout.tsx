@@ -48,7 +48,6 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";

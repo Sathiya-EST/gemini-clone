@@ -3,7 +3,7 @@
 import { useAuthStore } from "../../store/authStore";
 import { Button } from "../ui/button";
 import { ThemeToggle } from "./ThemeToggle";
-import { LogOut, MessageCircle, Menu, X } from "lucide-react";
+import { LogOut,  Menu, X } from "lucide-react";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 
