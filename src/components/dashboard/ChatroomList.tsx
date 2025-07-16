@@ -9,10 +9,11 @@ import { formatTimestamp } from "../../lib/utils";
 import { Trash2, MessageCircle, Plus } from "lucide-react";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
+import { Dialog, DialogTrigger } from "../ui/dialog";
 
 export const ChatroomList: React.FC = () => {
   const [showCreateForm, setShowCreateForm] = useState(false);
-  const { chatrooms, deleteChatroom, getFilteredChatrooms } = useChatStore();
+  const { deleteChatroom, getFilteredChatrooms } = useChatStore();
 
   const filteredChatrooms = getFilteredChatrooms();
 
@@ -26,26 +27,11 @@ export const ChatroomList: React.FC = () => {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">My Chatrooms</h1>
-        <Button onClick={() => setShowCreateForm(true)}>
-          <Plus className="h-4 w-4 mr-2" />
-          New Chat
-        </Button>
+        <h1 className="text-2xl font-bold">Search</h1>
       </div>
-
       <SearchBar />
 
-      {showCreateForm && (
-        <CreateChatroom
-          onClose={() => setShowCreateForm(false)}
-          onSuccess={() => {
-            setShowCreateForm(false);
-            toast.success("Chatroom created successfully");
-          }}
-        />
-      )}
-
-      <div className="grid gap-4">
+      <div className="grid gap-4 max-h-[60vh] overflow-auto">
         {filteredChatrooms.length === 0 ? (
           <div className="text-center py-8">
             <MessageCircle className="h-12 w-12 mx-auto text-gray-400 mb-4" />
@@ -58,7 +44,7 @@ export const ChatroomList: React.FC = () => {
           filteredChatrooms.map((chatroom) => (
             <div
               key={chatroom.id}
-              className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border hover:shadow-md transition-shadow"
+              className="rounded-lg p-4 shadow-sm border-b-2 hover:shadow-md transition-shadow"
             >
               <div className="flex items-center justify-between">
                 <Link

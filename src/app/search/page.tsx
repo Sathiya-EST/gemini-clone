@@ -1,0 +1,15 @@
+import { ChatroomList } from "@/components/dashboard/ChatroomList";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+
+const SearchPage = () => {
+  return (
+    <div className="p-6 px-20">
+      <ChatroomList />
+    </div>
+  );
+};
+
+export default SearchPage;

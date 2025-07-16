@@ -30,11 +30,14 @@ export const CountrySelector: React.FC<CountrySelectorProps> = ({
         const response = await axios.get(
           "https://restcountries.com/v3.1/all?fields=name,cca2,idd,flag"
         );
+
+        // Just filter countries with dial codes and sort (keeping all countries)
         const sortedCountries = response.data
           .filter((country: Country) => country.idd?.root)
           .sort((a: Country, b: Country) =>
             a.name.common.localeCompare(b.name.common)
           );
+
         setCountries(sortedCountries);
       } catch (error) {
         toast.error("Failed to load countries");
@@ -53,21 +56,35 @@ export const CountrySelector: React.FC<CountrySelectorProps> = ({
 
   return (
     <Select value={value} onValueChange={onChange}>
-      <SelectTrigger>
+      <SelectTrigger className="w-full">
         <SelectValue
           placeholder={loading ? "Loading countries..." : "Select country"}
         />
       </SelectTrigger>
-      <SelectContent>
-        {countries.map((country) => (
-          <SelectItem key={getDialCode(country)} value={getDialCode(country)}>
+      <SelectContent className="w-full min-w-[300px] max-w-none">
+        {loading ? (
+          <div className="flex items-center justify-center py-4">
             <div className="flex items-center gap-2">
-              <span>{country.flag}</span>
-              <span>{country.name.common}</span>
-              <span className="text-gray-500">({getDialCode(country)})</span>
+              <div className="w-4 h-4 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
+              <span className="text-sm text-gray-500">
+                Loading countries...
+              </span>
             </div>
-          </SelectItem>
-        ))}
+          </div>
+        ) : (
+          countries.map((country, index) => (
+            <SelectItem
+              key={`${country.cca2}-${index}`}
+              value={getDialCode(country)}
+            >
+              <div className="flex items-center gap-2">
+                <span>{country.flag}</span>
+                <span>{country.name.common}</span>
+                <span className="text-gray-500">({getDialCode(country)})</span>
+              </div>
+            </SelectItem>
+          ))
+        )}
       </SelectContent>
     </Select>
   );

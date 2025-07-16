@@ -83,15 +83,8 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
   };
 
   return (
-    <Card className="w-full border shadow-lg">
-      <CardContent className="p-4">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-semibold">Upload Image</h3>
-          <Button variant="ghost" size="sm" onClick={onClose}>
-            <X className="h-4 w-4" />
-          </Button>
-        </div>
-
+    <div className="w-full">
+      <div className="p-4">
         <div className="space-y-4">
           <div
             className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all duration-200 ${
@@ -154,7 +147,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
             </Button>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
