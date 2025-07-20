@@ -1,50 +1,3 @@
-// import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
-// import { ThemeProvider } from "next-themes";
-// import { Toaster } from "react-hot-toast";
-// import { Header } from "../components/layout/Header";
-// import "./globals.css";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata: Metadata = {
-//   title: "Gemini Clone - AI Chat Application",
-//   description: "A modern AI chat application built with Next.js and React",
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en" suppressHydrationWarning>
-//       <body className={inter.className}>
-//         <ThemeProvider
-//           attribute="class"
-//           defaultTheme="light"
-//           enableSystem={false}
-//           disableTransitionOnChange
-//         >
-//           <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-//             <Header />
-//             <main>{children}</main>
-//           </div>
-//           <Toaster
-//             position="top-right"
-//             toastOptions={{
-//               duration: 3000,
-//               style: {
-//                 background: "#333",
-//                 color: "#fff",
-//               },
-//             }}
-//           />
-//         </ThemeProvider>
-//       </body>
-//     </html>
-//   );
-// }
 "use client";
 
 import { useState } from "react";
@@ -57,9 +10,6 @@ import { usePathname } from "next/navigation";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-
-// Since we're using "use client", we need to handle metadata differently
-// You might want to move this to a separate server component or use next/head
 
 interface RootLayoutProps {
   children: React.ReactNode;
